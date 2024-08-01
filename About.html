@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <script src="addFooter.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Permanent+Marker|League+Spartan&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="generic_Web_Style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+
+<style>
+    
+        .wrapper .icon {
+            position: relative;
+            background-color: #ffffff;
+            border-radius: 50%;
+            margin: 10px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 22px;
+            display: inline-block;
+            align-items: center;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            color: #333;
+            text-decoration: none;
+        }
+        .wrapper {
+            text-align: center;
+        }
+
+        .wrapper .tooltip {
+            position: absolute;
+            top: 0;
+            line-height: 1.5;
+            font-size: 14px;
+            background-color: #ffffff;
+            color: #ffffff;
+            padding: 5px 8px;
+            border-radius: 5px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+            .wrapper .tooltip::before {
+                position: absolute;
+                content: "";
+                height: 8px;
+                width: 8px;
+                background-color: #ffffff;
+                bottom: -3px;
+                left: 50%;
+                transform: translate(-50%) rotate(45deg);
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+
+        .wrapper .icon:hover .tooltip {
+            top: -45px;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .wrapper .icon:hover span,
+        .wrapper .icon:hover .tooltip {
+            text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .wrapper .facebook:hover,
+        .wrapper .facebook:hover .tooltip,
+        .wrapper .facebook:hover .tooltip::before {
+            background-color: #3b5999;
+            color: #ffffff;
+        }
+
+      /*  .wrapper .twitter:hover,
+        .wrapper .twitter:hover .tooltip,
+        .wrapper .twitter:hover .tooltip::before {
+            background-color: #46c1f6;
+            color: #ffffff;
+        }*/
+
+        .wrapper .instagram:hover,
+        .wrapper .instagram:hover .tooltip,
+        .wrapper .instagram:hover .tooltip::before {
+            background-color: #e1306c;
+            color: #ffffff;
+        }
+
+      /*  .wrapper .github:hover,
+        .wrapper .github:hover .tooltip,
+        .wrapper .github:hover .tooltip::before {
+            background-color: #333333;
+            color: #ffffff;
+        }*/
+
+        .wrapper .youtube:hover,
+        .wrapper .youtube:hover .tooltip,
+        .wrapper .youtube:hover .tooltip::before {
+            background-color: #de463b;
+            color: #ffffff;
+        }
+    </style>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+        }
+
+        #MainDiv {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            overflow: auto;
+            margin: 30px;
+            width: 80%;
+            height: 60%;
+            background: rgb(228,228,228);
+            border-radius: 15px;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 10px 5px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 48px;
+            font-family: Gisha;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        }
+
+        td p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.4;
+
+        }
+        table{
+        table-layout: fixed;
+        }
+ /* Customize the scrollbar */
+   #MainDiv::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 15px; /* Add border-radius property to round the edges */
+  }
+
+  #MainDiv::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 15px;
+  }
+
+  #MainDiv::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+  #MainDiv::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 15px; /* Add border-radius property to round the edges */
+  }
+
+    </style>
+
+
+
+</head>
+  <body>
+      <div id="MainDiv">
+          <!--<ul class="social-icons">
+      <li><a href="https://www.facebook.com/your-page" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+    </ul>-->
+          <table>
+              <tr>
+                  <th colspan="2">
+                      <div style="overflow: auto; padding-top:5%;"><h2 style="text-align: center;">About Us</h2></div>
+                  </th>
+              </tr>
+              <tr>
+                  <td style=" width: 60%; ">
+                      <ul>
+
+                          <li><p>Welcome to FindMatch!, the premier social network designed to help you schedule football matches in your neighborhood. Our platform is dedicated to connecting football enthusiasts like you, making it easy to find teammates and enjoy the beautiful game.</p></li>
+                          <li><p>At FindMatch!, we understand the challenge of organizing a match and finding players, especially when you don't know them personally. That's why we've created a user-friendly platform that allows you to connect with fellow players in your area, regardless of your existing social circles.</p></li>
+                          <li><p>With our innovative features, you can create or join matches, specify your skill level, and invite others to participate. Whether you're a seasoned player or just getting started, our inclusive community welcomes players of all backgrounds and experience levels.</p></li>
+                     <ul>
+     
+                  </td>
+                  <td style=" text-align:end;">
+                    <div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe             src="https://share.synthesia.io/embeds/videos/b80d485b-9b3e-4626-a688-01f8a557964b" loading="lazy"  allow="encrypted-media; fullscreen;" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0; overflow:hidden;"></iframe></div>
+                      <div class="wrapper">
+                          <a href="https://www.facebook.com/profile.php?id=100093995452475" target="_blank" class="icon facebook">
+                              <div class="tooltip">Facebook</div>
+                              <span><i class="fab fa-facebook-f"></i></span>
+                          </a>                
+                          <a href="https://www.instagram.com/find_match_web"  target="_blank" class="icon instagram">
+                              <div class="tooltip">Instagram</div>
+                              <span><i class="fab fa-instagram"></i></span>
+                          </a>                         
+                          <a href="https://www.youtube.com/@findmatch407/featured" target="_blank" class="icon youtube">
+                              <div class="tooltip">Youtube</div>
+                              <span><i class="fab fa-youtube"></i></span>
+                          </a>
+                      </div>
+
+                  </td>
+
+              </tr>
+          </table>
+
+              
+              
+          </div>
+
+  </body>
+</html>

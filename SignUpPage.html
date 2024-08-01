@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <script src="addFooter.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Permanent+Marker|League+Spartan&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="generic_Web_Style.css">
+    <script src="SignUp.js"></script>
+
+
+    <style>
+        body {
+            background-image: url("img/bg-modified.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Gisha;
+        }
+
+        form {
+            position: relative;
+            border: 1px solid rgb(204, 204, 204);
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgb(247, 247, 247);
+            max-width: 450px;
+            margin: 0 auto;
+            top: 170px;
+            height: 350px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #firstChildForm,
+        #secondChildForm {
+            display: inline-block;
+            text-align: center;
+        }
+
+        #secondChildForm {
+            position: absolute;
+            left: 250px;
+        }
+
+        #thirdChildForm {
+            text-align: center;
+        }
+
+        textarea {
+            width: 80%;
+            height: 145px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .user {
+            margin-top: 10px;
+            background-color: darkolivegreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            font-size: 24px;
+            top: -14px;
+        }
+
+            .user:hover {
+                background-color: darkgreen;
+            }
+    </style>
+</head>
+<body onload="init()">
+
+
+    <form id="form" action="SignUpPage.php" method="post" >
+
+        <div id="thirdChildForm">
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+         </div>
+        <div id="firstChildForm">
+
+            <label for="FirstName">First Name:</label>
+            <input type="text" id="FirstName" name="firstName" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"
+                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+                   onmouseover="showPassword(this)" onmouseout="hidePassword(this)" required>
+            <label for="userDate">Birth Date:</label>
+            <input type="date" id="userDate" name="userDate" required>
+            <script>
+                let today = new Date().toISOString().split('T')[0];
+                document.getElementById("userDate").setAttribute("max", today);
+            </script>
+            
+
+        </div>
+            <div id="secondChildForm">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <label for="RePassword" id="reP">Re-enter password:</label>
+                <input type="password" id="RePassword" name="RePassword" 
+                       title="Password are not equals"  onmouseover="showPassword(this)" 
+                       onmouseout="hidePassword(this)" required>
+                <label for="tel">Mobile Number:</label>
+                <input type="tel" id="tel" name="tel" required>
+            </div>
+
+            <div id="thirdChildForm">
+                <input type="submit" name="signUp" value="Sign up" class="user"/>
+            </div>
+
+    </form>
+</body>
+</html>

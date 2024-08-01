@@ -1,0 +1,282 @@
+body {
+    background-image: url("img/bg-modified.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Gisha;
+
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    vertical-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer p {
+    display: inline-block;
+    font-size: 16px;
+    margin: 0;
+}
+
+
+footer nav li {
+    margin: 0 50px;
+}
+
+/*------------*/
+/* buttom  footer - start */
+.bottomFooter {
+    display: flex;
+    justify-content: center;
+}
+/* buttom  footer - end */
+
+
+/*------------*/
+/* top right navigation - start */
+.topnav {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+        float: none;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        /* Change the color of links on hover */
+        /*.topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }*/
+        /* Change the color of links on hover */
+        .topnavTd:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav td.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+#userIcon {
+    vertical-align: middle;
+    height: 30px;
+}
+
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: inline-block;
+}
+
+#tbl {
+    background-color: #333;
+    border-collapse: collapse;
+}
+
+/*------------*/
+/* top right navigation - end */
+
+
+
+
+
+/*LOGO*/
+
+
+.logoH {
+    padding-top: 15px;
+    font-size: 90px;
+    font-family: Chewy;
+    width: 414px;
+    height: 115px;
+    position: static;
+    left: auto;
+    top: auto;
+    order: 1;
+    min-width: 0px;
+    transform: translate3d(0px, -14px, 0px);
+    color: #bcbcbc;
+}
+
+.logoS {
+    font-family: "League Spartan";
+    text-align: left;
+    order: 2;
+    height: 30px;
+    width: 150%;
+    font-size: 29px;
+    transform: translate3d(0, -28px, 0px);
+    color:#bcbcbc;
+}
+
+
+.logo {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+}
+  
+ #tdBall{
+     width:130px;
+ } 
+.ball {
+	margin-right:10px;
+	text-align:center;
+    transition-duration: 1.5s;
+    transform: translate3d(8px, -17px, 0px);
+    width: 120px;
+    height: 120px;
+      transform-origin: center center; /* Set the transform origin to the center */
+
+}
+
+
+.ball:hover {
+transform: translate3d(8px, -17px, 0px) rotate(360deg);}
+
+
+
+
+  /* Styling for the tooltip */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+      border-radius: 5%; 
+
+  }
+
+  /* Styling for the tooltip content */
+  .tooltip .tooltip-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 5px;
+      border-radius: 5%; 
+
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    display: none;
+    z-index: 1;
+  }
+
+  /* Show the tooltip content when hovering over the link */
+  .tooltip:hover .tooltip-content {
+    display: block;
+  }
+  iframe{
+      border-radius: 5%; 
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
+
+  }
+
+.rights
+{
+    vertical-align: center;
+    text-align: left;
+    line-height: 30px;
+    padding-left: 1%;
+}
+
+#pLabel
+{
+    padding-left: 50%;
+
+}
+
+/*TRASH*/
+
+/*.logo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+}*/
+
+/*nav {
+    float: right;
+}*/
+
+/*
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}*/
+
+
+/* (A) STANDARD ROW HEIGHT */
+.vwrap, .vitem {
+  height: 30px;
+  line-height: 30px;
+}
+
+/* (B) FIXED WRAPPER */
+.vwrap {
+  overflow: hidden; /* HIDE SCROLL BAR */
+  position: absolute;
+  right: 0px;
+  padding-right: 2%;
+  background: #eee;
+  display: inline-block;
+  background-color: #333;
+}
+
+/* (C) TICKER ITEMS */
+.vitem { text-align: center; }
+
+/* (D) ANIMATION - MOVE ITEMS FROM TOP TO BOTTOM */
+/* CHANGE KEYFRAMES IF YOU ADD/REMOVE ITEMS */
+.vmove { position: relative; }
+@keyframes tickerv {
+  0% { bottom: 0; } /* FIRST ITEM */
+  30% { bottom: 30px; } /* SECOND ITEM */
+  60% { bottom: 60px; } /* THIRD ITEM */
+  90% { bottom: 90px; } /* FORTH ITEM */
+  100% { bottom: 0; } /* BACK TO FIRST */
+}
+.vmove {
+  animation-name: tickerv;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(1, 0, .5, 0);
+}
+.vmove:hover { animation-play-state: paused; }

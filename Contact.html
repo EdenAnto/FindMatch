@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <script src="addFooter.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Permanent+Marker|League+Spartan&amp;display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="generic_Web_Style.css">
+
+
+    <style>
+        body {
+            background-image: url("img/bg-modified.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Gisha;
+        }
+
+        form {
+            position: relative;
+            border: 1px solid rgb(204, 204, 204);
+            padding: 20px;
+            border-radius: 5px;
+            background-color: rgb(247, 247, 247);
+            max-width: 450px;
+            margin: auto;
+            top: 200px;
+            height: 220px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #firstChildForm,
+        #secondChildForm {
+            display: inline-block;
+        }
+
+        #secondChildForm {
+            position: absolute;
+            left: 250px;
+            text-align: center;
+        }
+
+        textarea {
+            width: 80%;
+            height: 145px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .user {
+            background-color: darkolivegreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            font-size: 24px;
+            top: -14px;
+        }
+
+            .user:hover {
+                background-color: darkgreen;
+            }
+
+
+        .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+        position: fixed;
+            top: 30%;
+            left: 45%;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+    </style>
+
+<script>
+function sendEmail() {
+    let name = $("#name").val();
+    let email = $("#email").val();
+
+    
+  Email.send({
+    SecureToken: "d68d3503-a29b-4adb-abb0-83fa2db63e55",
+    To: email,
+    From: "SupFindMatch@gmail.com",
+    Subject: "Thank you for contacting us",
+    Body: `
+    <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
+      <h2 style="color: #333;">Thank you for contacting us</h2>
+      <p style="color: #555;">Dear `+name+`,</p>
+      <p style="color: #555;">Thank you for reaching out to us. Our team will review your inquiry and get back to you shortly.</p>
+      <p style="color: #555;">If you have any further questions or concerns, please don't hesitate to contact us.</p>
+      <p style="color: #555;">Best regards,</p>
+      <p style="color: #555;">The FindMatch! Team</p>
+    </div>
+  `
+  }).then(function(message) {
+          // document.getElementsByClassName("contactForm")[0].style.display="none";
+
+           //document.getElementsByClassName("loader")[0].style.display="block";
+           //setTimeout(function() {
+           //document.getElementsByClassName("loader")[0].style.display="none";
+           //document.getElementsByClassName("thankYouForm")[0].style.display="block";
+
+            //}, 1200);
+
+    document.getElementsByClassName("contactForm")[0].submit();
+
+  });
+}
+
+
+</script>
+
+</head>
+<body>
+
+
+    <form class="contactForm" method="post" action="Contact.php" >
+        <div id="firstChildForm" >
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+        </div>
+        <div id="secondChildForm">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required placeholder="What can we assist for?" style="width:80%;height:145px;"></textarea>
+            <input type="button" class="user" value="Send" onclick="sendEmail()">
+        </div>
+    </form>
+            <div class="loader" style="display:none;"></div>
+
+    <form class="thankYouForm" style="display:none; text-align: center;">
+<h1> Thank You! </h1>
+Your request will be forwarded to the responsible team and will be answered as soon as possible.<br>
+Please check your email inbox for further communication.<br>
+It is possible to enter Please enter your answer as it may end up in your spam folder.<br>
+<br><br>
+
+
+<input type="button" class="user" value="Got It!" onclick="reloadPage()" >
+          
+    </form>
+
+</body>
+</html>
